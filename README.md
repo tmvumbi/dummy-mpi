@@ -18,9 +18,20 @@ The patient information includes:
 To set up the application on your local machine:
 
 1. Install Node.js and npm if you haven't already. You can download them from [here](https://nodejs.org/en/download/).
-2. Clone this repository to your local machine.
-3. Run `npm install` in the root directory of the project to install the necessary dependencies.
-4. Run `npm start` to start the server.
+2. Clone this repository to your local machine by running the following command in your terminal:
+
+    ```
+    git clone https://github.com/tmvumbi/dummy-mpi
+    ```
+
+3. Navigate into the cloned repository folder:
+
+    ```
+    cd dummy-mpi
+    ```
+
+4. Run `npm install` in the root directory of the project to install the necessary dependencies.
+5. Run `npm start` to start the server.
 
 ## API
 
