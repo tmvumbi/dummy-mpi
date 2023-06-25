@@ -1,0 +1,87 @@
+{
+	"info": {
+		"_postman_id": "6230e4a2-ae83-4f34-9058-deb28fe685b6",
+		"name": "Dummy MPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Call API Directly",
+			"item": [
+				{
+					"name": "Get All Patients",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": "localhost:5555/patients"
+					},
+					"response": []
+				},
+				{
+					"name": "Add patient",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nationalId\": \"123456\",\n    \"firstName\": \"John\",\n    \"familyName\": \"Doe\",\n    \"age\": 30,\n    \"sex\": \"Male\",\n    \"phoneNumber\": \"123-456-7890\",\n    \"allergies\": [\"Peanuts\", \"Grass\"],\n    \"conditions\": [\"Asthma\", \"Diabetes\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "localhost:5555/patients"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Call Through OpenHIM",
+			"item": [
+				{
+					"name": "Get All Patients",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "emr1",
+								"username": "EMR1"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "https://localhost:5000/patients"
+					},
+					"response": []
+				},
+				{
+					"name": "Add patient",
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": {
+								"password": "emr1",
+								"username": "EMR1"
+							}
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"nationalId\": \"2345678\",\n    \"firstName\": \"Jane\",\n    \"familyName\": \"Doe\",\n    \"age\": 28,\n    \"sex\": \"Female\",\n    \"phoneNumber\": \"123-456-7890\",\n    \"allergies\": [\"Peanuts\", \"Grass\"],\n    \"conditions\": [\"Asthma\", \"Diabetes\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://localhost:5000/emr"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

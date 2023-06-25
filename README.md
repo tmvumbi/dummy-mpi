@@ -35,13 +35,30 @@ To set up the application on your local machine:
 
 ## API
 
+The API host is `http://localhost:5555`.
+
 Here are the available API endpoints:
 
 - `GET /patients`: List all patients.
 - `POST /patients`: Add a patient. If a patient with the provided national ID already exists, the existing patient record will be updated. The patient data should be included in the request body in JSON format.
 - `GET /patientsUI`: View the patient data in an HTML table.
 
-You can use a tool like [Postman](https://www.postman.com/) or [curl](https://curl.se/) to interact with the API.
+Here is a sample payload to create a new patient:
+
+```json
+{
+    "nationalId": "123456789",
+    "firstName": "John",
+    "familyName": "Doe",
+    "age": 30,
+    "sex": "Male",
+    "phoneNumber": "+123456789",
+    "allergies": ["Peanuts", "Penicillin"],
+    "conditions": ["Asthma", "Diabetes"]
+}
+```
+
+You can use a tool like [Postman](https://www.postman.com/) or [curl](https://curl.se/) to interact with the API. We have included a Postman collection in this repository to help you get started with testing. You can download the collection file `Dummy MPI.postman_collection.json` from the root directory of the project and import it into Postman.
 
 Please note that all data is stored in memory, so it will be lost when the server restarts.
 
